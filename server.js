@@ -1,14 +1,14 @@
 var express = require('express');
 var cors = require('cors');
 var mongoose = require('mongoose');
-var bodyParser = require('bodyParser');
+var bodyParser = require('body-parser');
 var passport = require('passport');
-var db = require('../config/database.js');
-var config = require('../config/passport.js');
+var config = require('./server/config/passport.js');
+var db = require('./server/config/database.js');
 var app = express();
 var router = express.Router(app);
-var ContactsCtrl = require('./Contacts/ContactsCtrl.js')(app, express, router),
-var UsersCtrl = require('./Users/UsersCtrl.js')(app, express, router),
+var ContactsCtrl = require('./server/Contacts/ContactsCtrl.js')(app, express, router);
+var UsersCtrl = require('./server/Users/UsersCtrl.js')(app, express, router);
 var port = process.env.PORT || 9000;
 
 
