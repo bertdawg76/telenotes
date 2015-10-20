@@ -1,6 +1,6 @@
 angular.module('telenotes', ['ui.router']);
 
-angular.module('telenotes').config(funcion($urlRouterProvider, $stateProvider){
+angular.module('telenotes').config(function($urlRouterProvider, $stateProvider){
 
 	$urlRouterProvider.otherwise('/');
 	$stateProvider
@@ -11,26 +11,26 @@ angular.module('telenotes').config(funcion($urlRouterProvider, $stateProvider){
 		controller: 'contactsCtrl'
 	})
 	.state('admin', {
-		url: 'admin',
+		url: '/admin',
 		templateUrl: 'admin/admin.html',
-		controller: 'adminCtrl'
+		controller: 'contactsCtrl'
 	})
 	.state('login', {
 		url: '/login',
 		templateUrl: 'users/login.html',
 		controller: 'usersCtrl',
-		onEnter: function($state, usersService) {
-			if(usersService.isLoggedIn()){
+		onEnter: function($state, auth) {
+			if(auth.isLoggedIn()){
 				$state.go('admin');
 			}
 		}
 	})
 	.state('register', {
-		url: 'register',
+		url: '/register',
 		templateUrl: 'users/register.html',
 		controller: 'usersCtrl',
-		onEnter: function($state, usersService) {
-			if(usersService.isLoggedIn()){
+		onEnter: function($state, auth) {
+			if(auth.isLoggedIn()){
 				$state.go('admin');
 			}
 		}

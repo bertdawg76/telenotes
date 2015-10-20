@@ -4,28 +4,32 @@
 		<meta charset="utf-8">
 
 		<title>Contact-management</title>
-
+		<!--<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">-->
+		<link rek="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="styles/styles.css">
 	</head>
 
 	<body>
+		<header ng-include="'nav/nav.html'"></header>
+		<div class="md-whiteframe-z2" style="margin: 30px; padding: 30px;" ui-view></div>
 
+		
 
-
-
-
-
-
-		<div ui-view></div>
+		
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<!--<script src="bower_components/angular-material/angular-material.min.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>-->
 	<script src=""></script>
 	<script src=""></script>
 	<script src=""></script>
 	<script src="app.js"></script>
 	<script src="contacts/contactsCtrl.js"></script>
-	<script src="contacts/contactsCtrl.js"></script>
+	<script src="contacts/contactsService.js"></script>
 	<script src="users/usersCtrl.js"></script>
-	<script src="users/usersCtrl.js"></script>
+	<script src="users/usersService.js"></script>
+	<script src="nav/navCtrl.js"></script>
 	</body>
 </html>

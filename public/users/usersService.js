@@ -1,4 +1,4 @@
-angular.module('telenotes').factory('usersService', function ($http, $window) {
+angular.module('telenotes').factory('auth', function ($http, $window) {
 
     var auth = {
         saveToken: saveToken,
@@ -47,6 +47,7 @@ angular.module('telenotes').factory('usersService', function ($http, $window) {
 
     function register(user){
         return $http.post('/api/users/register', user).success(function(data){
+            console.log(user);
             auth.saveToken(data.token);
         }).error(function(err) {
             console.log(err);

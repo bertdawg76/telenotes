@@ -1,4 +1,4 @@
-angular.module('telenotes').controller('usersCtrl', function($scope, $state, usersService){
+angular.module('telenotes').controller('usersCtrl', function($scope, $state, auth){
 	$scope.user = {};
 
 	$scope.register = function() {

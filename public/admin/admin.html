@@ -1,0 +1,39 @@
+ <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>  
+          <th>Last Name</th>       
+          <th>Email</th>
+          <th>Number</th>
+          <th>Action</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          
+          <td><input class="form-control"  ng-model="contact.fname"></td>
+          <td><input class="form-control"  ng-model="contact.lname"></td>
+          <td><input class="form-control" ng-model="contact.email"></td>
+          <td><input class="form-control" ng-model="contact.number"></td>
+          <td><button ng-click="addContact(contact)">Add Contact</button></td>
+          <td><button ng-click="updateContact(contact)">Update</button>
+          <button  ng-click="getContact()">get</button></td>
+          
+      
+
+      </tr>
+   
+        
+        
+        <tr ng-repeat="contact in contactList">
+          <td>{{contact.fname}}</td>
+          <td>{{contact.lname}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.number}}</td>
+          <td><button  ng-click="removeContact(contact._id)">Remove</button></td>
+          <td><button  ng-click="editContact(contact._id)">Edit</button></td>
+           <td><button  ng-click="getContact()">get</button></td>
+        </tr>
+      </tbody>
+    </table>
