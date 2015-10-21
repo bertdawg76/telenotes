@@ -1,5 +1,7 @@
-angular.module('telenotes').controller('contactsCtrl', function($scope, contactsService){
+angular.module('telenotes').controller('contactsCtrl', function($scope, contactsService, auth){
 
+	$scope.isLoggedIn = auth.isLoggedIn;
+	
 	var refresh = function() {
 		contactsService.getContact().then(function(response){
 			$scope.contactList = response;

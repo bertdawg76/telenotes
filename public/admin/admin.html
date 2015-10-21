@@ -1,5 +1,9 @@
- 
-<label>Search By Name: <input ng-model="searchNames"></label>
+
+<div ng-hide="isLoggedIn()">
+  <h4>You need to <a ui-sref='login'>Log In</a> or <a ui-sref='register'>Register</a> before you can view and edit contacts.</h3>
+</div>
+<div ng-show="isLoggedIn()">
+<label>Search for Contact: <input ng-model="searchNames"></label>
  <table class="table">
       <thead>
         <tr>
@@ -14,12 +18,12 @@
       <tbody>
         <tr>
           
-          <td><input class="form-control"  ng-model="contact.fname"></td>
-          <td><input class="form-control"  ng-model="contact.lname"></td>
-          <td><input class="form-control" ng-model="contact.email"></td>
-          <td><input class="form-control" ng-model="contact.number"></td>
+          <td><input class="form"  ng-model="contact.fname"></td>
+          <td><input class="form"  ng-model="contact.lname"></td>
+          <td><input class="form" ng-model="contact.email"></td>
+          <td><input class="form" ng-model="contact.number"></td>
           <td><button ng-click="addContact(contact)">Add Contact</button></td>
-          <td><button ng-click="updateContact(contact)">Update</button>
+          <td><button ng-click="updateContact(contact)">Update</button></td>
          
           
       
@@ -39,3 +43,4 @@
         </tr>
       </tbody>
     </table>
+  </div>

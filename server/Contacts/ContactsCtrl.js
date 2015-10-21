@@ -1,4 +1,8 @@
 var Contact = require('./ContactsSchema.js');
+var passport = require('passport');
+var jwt = require('express-jwt');
+var auth = jwt({secret: 'I heart donuts', userProperty: 'payload'});
+var mongoose = require('mongoose');
 
 module.exports = function (app, express) {
     var router = express.Router();
@@ -39,7 +43,7 @@ module.exports = function (app, express) {
 
         });
 
-    router.route('/:id')
+    router.route('/:id', auth)
         .get(function (req, res) {
             Contact.findById(req.params.id).exec(function (err, contact) {
                 if (err) {

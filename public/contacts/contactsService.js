@@ -1,4 +1,4 @@
-angular.module('telenotes').service('contactsService', function($http, $q){
+angular.module('telenotes').service('contactsService', function($http, $q, auth){
 
   var urlBase = 'api/contacts';
 
@@ -6,8 +6,9 @@ angular.module('telenotes').service('contactsService', function($http, $q){
     var dfd = $q.defer();
     $http({
       method: 'GET',
-      url: urlBase
-    }).then(function (response){
+      url: urlBase,
+      headers: {Authorization: 'Bearer '+auth.getToken()}
+     }).then(function (response){
     	console.log(response.data);
     	dfd.resolve(response.data);
     }, function (error){
@@ -22,8 +23,9 @@ angular.module('telenotes').service('contactsService', function($http, $q){
     $http({
       method: 'POST',
       url: urlBase,
-      data: body
-    }).then(function (response) {
+      data: body,
+      headers: {Authorization: 'Bearer '+auth.getToken()}
+     }).then(function (response) {
       console.log(response.data);
       dfd.resolve(response.data);
     }, function (error) {
@@ -53,8 +55,8 @@ angular.module('telenotes').service('contactsService', function($http, $q){
     $http({
       method: 'DELETE',
       url: urlBase + '/' + id,
-      
-    }).then(function (response) {
+      headers: {Authorization: 'Bearer '+auth.getToken()}
+     }).then(function (response) {
       console.log(response.data);
       dfd.resolve(response.data);
     }, function (error) {
@@ -67,9 +69,9 @@ angular.module('telenotes').service('contactsService', function($http, $q){
   	var dfd = $q.defer();
   	$http({
   		method: 'GET',
-  		url: urlBase + '/' + id
-  
-  	}).then(function (response){
+  		url: urlBase + '/' + id,
+      headers: {Authorization: 'Bearer '+auth.getToken()}
+     }).then(function (response){
   		console.log(response.data);
   		dfd.resolve(response.data);
   	}, function (error){

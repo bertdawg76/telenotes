@@ -3,12 +3,14 @@
 		First name: <input type="text" ng-model="contact.fname"><br>
 		Last name:	<input type="text" ng-model="contact.lname"><br>
 		email: <input type="email" ng-model="contact.email"><br>
-		Phone #: <input type="number" ng-model="contact.number"><br>
+		Phone #: <input type="text" ng-model="contact.number"><br>
 	 	<button ng-click="addContact(contact)">submit</button>
 		
 
 	</form>
 
 </div>
+
+<h4>You need to <a ui-sref='login'>Log In</a> or <a ui-sref='register'>Register</a> before you can view and edit contacts.</h3>
 
 	

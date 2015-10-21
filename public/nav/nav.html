@@ -1,14 +1,14 @@
-<div ng-controller="navCtrl" class="">
+<div ng-controller="navCtrl" class="wrapper">
 
 
 
-  <div>
- 	  <ul class="nav navbar-nav">
- 	  <li><a ui-sref='contacts'>Contact Form</a></li>
-      <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
-      <li ng-show="isLoggedIn()"><a href='' ng-click="logOut()">Log Out</a></li>
-      <li ng-hide="isLoggedIn()"><a ui-sref='login'>Log In</a></li>
-      <li ng-hide="isLoggedIn()"><a ui-sref='register'>Register</a></li>
+  <divn>
+ 	 <ul class="navbar">
+ 	  <li class="one"><a ui-sref='contacts'>Contact Form</a></li>
+      <li class="two" ng-show="isLoggedIn()"><a>Welcome {{ currentUser() }}</a></li>
+      <li class="three" ng-show="isLoggedIn()"><a href='' ng-click="logOut()">Log Out</a></li>
+      <li class="four" ng-hide="isLoggedIn()"><a ui-sref='login'>Log In</a></li>
+      <li class="five" ng-hide="isLoggedIn()"><a ui-sref='register'>Register</a></li>
       
     </ul>
  </div>
