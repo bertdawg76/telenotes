@@ -1,16 +1,17 @@
 <div>
-	<form>
-		<input class="six" type="text" placeholder="First Name" ng-model="contact.fname" required><br>
-		<input class="six" type="text" placeholder="Last Name" ng-model="contact.lname" required><br>
-		<input class="six" type="email" placeholder="Email" ng-model="contact.email" required><br>
-		<input class="six" type="text" placeholder="Phone Number" ng-model="contact.number"required><br>
-	 	<button ng-click="addContact(contact)">submit</button>
+	<h2>Please Add Contact Info</h2>
+	<form class="contact_form">
+		<input type="text" placeholder="First Name" ng-model="contact.fname" required><br>
+		<input type="text" placeholder="Last Name" ng-model="contact.lname" required><br>
+		<input type="email" placeholder="Email" ng-model="contact.email" required><br>
+		<input type="text" placeholder="Phone Number" ng-model="contact.number"required><br>
+	 	<button class="submit" ng-click="addContact(contact)">submit</button>
 		
 
 	</form>
 
 </div>
 
-<h4 ng-hide="isLoggedIn()">You need to <a ui-sref='login'>Log In</a> or <a ui-sref='register'>Register</a> before you can view and edit contacts.</h3>
+<h3 ng-hide="isLoggedIn()">You need to <a ui-sref='login'>Log In</a> or <a ui-sref='register'>Register</a> before you can view and edit contacts.</h3>
 
 	

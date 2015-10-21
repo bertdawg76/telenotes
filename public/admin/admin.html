@@ -1,29 +1,22 @@
 
 <div ng-hide="isLoggedIn()">
-  <h4>You need to <a ui-sref='login'>Log In</a> or <a ui-sref='register'>Register</a> before you can view and edit contacts.</h3>
+  <h3>You need to <a ui-sref='login'>Log In</a> or <a ui-sref='register'>Register</a> before you can view and edit contacts.</h3>
 </div>
-<div ng-show="isLoggedIn()">
-<label>Search for Contact: <input ng-model="searchNames"></label>
+<div class="contact_form" ng-show="isLoggedIn()">
+<h2>Search for Contact</h2>
+<input type="text" placeholder="Search for Contact" ng-model="searchNames">
  <table class="table">
-      <thead>
-        <tr>
-          <th>First Name</th>  
-          <th>Last Name</th>       
-          <th>Email</th>
-          <th>Number</th>
-          <th>Action</th>
-          <th>&nbsp;</th>
-        </tr>
-      </thead>
+     
+      <h2>Add or Update Contact</h2>
       <tbody>
         <tr>
           
-          <td><input class="form"  ng-model="contact.fname"></td>
-          <td><input class="form"  ng-model="contact.lname"></td>
-          <td><input class="form" ng-model="contact.email"></td>
-          <td><input class="form" ng-model="contact.number"></td>
-          <td><button ng-click="addContact(contact)">Add Contact</button></td>
-          <td><button ng-click="updateContact(contact)">Update</button></td>
+          <td><input type="text" placeholder="First Name" ng-model="contact.fname" required></td>
+          <td><input type="text" placeholder="Last Name" ng-model="contact.lname" required></td>
+          <td><input type="email" placeholder="Email" ng-model="contact.email" required></td>
+          <td><input type="text" placeholder="Phone Number" ng-model="contact.number" required></td>
+          <td><button class="submit" ng-click="addContact(contact)">Add Contact</button></td>
+          <td><button class="submit" ng-click="updateContact(contact)">Update</button></td>
          
           
       
@@ -37,8 +30,8 @@
           <td>{{contact.lname}}</td>
           <td>{{contact.email}}</td>
           <td>{{contact.number}}</td>
-          <td><button  ng-click="removeContact(contact._id)">Remove</button></td>
-          <td><button  ng-click="editContact(contact._id)">Edit</button></td>
+          <td><button  class="submit" ng-click="removeContact(contact._id)">Remove</button></td>
+          <td><button class="submit" ng-click="editContact(contact._id)">Edit</button></td>
           
         </tr>
       </tbody>
