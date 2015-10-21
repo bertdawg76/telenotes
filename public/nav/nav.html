@@ -4,6 +4,7 @@
 
   <divn>
  	 <ul class="navbar">
+ 	  <li ng-show="isLoggedIn()" class="one"><a ui-sref='admin'>Admin</a></li>
  	  <li class="one"><a ui-sref='contacts'>Contact Form</a></li>
       <li class="two" ng-show="isLoggedIn()"><a>Welcome {{ currentUser() }}</a></li>
       <li class="three" ng-show="isLoggedIn()"><a href='' ng-click="logOut()">Log Out</a></li>

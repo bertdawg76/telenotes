@@ -1,7 +1,9 @@
-<form>
-	username: <input ng-model="user.username"></br>
 
-	password: <input type="password" ng-model="user.password"></br>
+<h2>Login</h2>
+<form>
+	<input class="six" type="text" placeholder="Username" ng-model="user.username" required></br>
+
+	<input class="six" type="password" placeholder="Password" ng-model="user.password" required></br>
 	<button ng-click="logIn()">Submit</button>
 
 </form>
