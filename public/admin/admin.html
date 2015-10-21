@@ -26,10 +26,10 @@
         
         
         <tr ng-repeat="contact in contactList | filter:searchNames">
-          <td>{{contact.fname}}</td>
-          <td>{{contact.lname}}</td>
-          <td>{{contact.email}}</td>
-          <td>{{contact.number}}</td>
+          <td class="six">{{contact.fname}}</td>
+          <td class="six">{{contact.lname}}</td>
+          <td class="six">{{contact.email}}</td>
+          <td class="six">{{contact.number}}</td>
           <td><button  class="submit" ng-click="removeContact(contact._id)">Remove</button></td>
           <td><button class="submit" ng-click="editContact(contact._id)">Edit</button></td>
           

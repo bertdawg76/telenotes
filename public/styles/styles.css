@@ -47,6 +47,7 @@ a:active {
     width:220px; 
     padding:5px 8px;
     margin-bottom:10px;
+    font-size:14px;
 }
 
 .contact_form input { 
@@ -102,8 +103,9 @@ button.submit:active {
     -o-box-shadow: 0 0 10px 5px #356b0b inset;
      
 }
-td {
-	text: 20px;
+.six {
+	font-size: 20px;
+	border: 1px solid #5b992b;
 }
 
 
